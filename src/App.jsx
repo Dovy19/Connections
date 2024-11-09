@@ -6,6 +6,8 @@ import Header from './Header'
 
 function App() {
 
+  
+
 const [showRules, setShowRules] = useState(true);
 
 const handleCloseRules = () => {
