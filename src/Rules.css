@@ -68,6 +68,49 @@
     font-weight: 700;
 }
 
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+    .rules-modal {
+      background-color: #2c2c2c; /* Dark background for modal */
+      color: #e0e0e0; /* Light text color */
+      border: 0.125em solid #444; /* Darker border */
+      box-shadow: 0px 0.25em 0.625em rgba(255, 255, 255, 0.2); /* Lighter shadow for dark mode */
+    }
+  
+    .rules-intro h2,
+    .rules-htp h2 {
+      color: #e0e0e0; /* Light heading color */
+    }
+  
+    .rules-htp ul,
+    .rules-tips ul {
+      color: #bbb; /* Lighter list item text */
+    }
+  
+    .rules-htp li,
+    .rules-tips li {
+      color: #ccc; /* Lighter list item text */
+    }
+  
+    .rules-htp li:last-child, 
+    .rules-tips li:last-child {
+      border-bottom: 0.125em solid #666; /* Darker border for last items */
+    }
+  
+    .rules-close-btn {
+      color: #e0e0e0;
+    }
+  
+    .rules-close-btn:hover {
+      color: #fff; /* White close button hover in dark mode */
+    }
+  
+    .rules-tips p {
+      color: #ddd; /* Lighter tips text */
+    }
+  }
+
 /* Media Queries for Responsiveness */
 
 /* For large screens, no changes needed */
