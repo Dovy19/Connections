@@ -1,0 +1,168 @@
+/* Default styles for the overlay and modal */
+.rules-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.rules-modal {
+    background-color: white;
+    padding: 1.25em; /* 20px */
+    width: 80%;
+    max-width: 31.25em; /* 500px */
+    border-radius: 0.75em; /* 12px */
+    border: 0.125em solid black; /* 2px */
+    box-shadow: 0px 0.25em 0.625em rgba(0, 0, 0, 0.3); /* 4px, 10px */
+    overflow-y: auto;
+    max-height: 80vh;
+    text-align: center;
+    position: relative;
+}
+
+.rules-intro h2,
+.rules-htp h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.rules-htp ul, 
+.rules-tips ul {
+    margin-left: 1.25em; /* 20px */
+    text-align: left;
+}
+
+.rules-htp li, 
+.rules-tips li {
+    list-style-type: decimal;
+    margin-bottom: 0.5em; /* 8px */
+}
+
+.rules-htp li:last-child, 
+.rules-tips li:last-child {
+    border-bottom: 0.125em solid black; /* 2px */
+}
+
+.rules-close-btn {
+    position: absolute;
+    top: 0.625em; /* 10px */
+    right: 0.625em; /* 10px */
+    background: none;
+    border: none;
+    font-size: 1.2rem; /* Using rem for font-size is fine */
+    cursor: pointer;
+    color: #666;
+}
+
+.rules-close-btn:hover {
+    color: #333;
+}
+
+.rules-tips p {
+    font-weight: 700;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For large screens, no changes needed */
+@media (max-width: 1024px) {
+    .rules-modal {
+        width: 70%; /* Reduce width slightly for large screens */
+    }
+}
+
+/* For tablets (max-width 768px) */
+@media (max-width: 768px) {
+    .rules-modal {
+        width: 85%; /* Slightly larger modal width for tablets */
+    }
+
+    .rules-close-btn {
+        font-size: 1rem; /* Adjust font size of close button */
+    }
+}
+
+/* For smaller screens (max-width 640px) */
+@media (max-width: 640px) {
+    .rules-modal {
+        width: 90%; /* Increase modal width for smaller screens */
+        padding: 1em; /* Slightly less padding to accommodate small screens */
+    }
+
+    .rules-close-btn {
+        font-size: 0.9rem; /* Reduce font size for small screens */
+    }
+
+    .rules-intro h2, .rules-htp h2 {
+        font-size: 1.5rem; /* Adjust heading font size */
+    }
+
+    .rules-htp ul, .rules-tips ul {
+        margin-left: 1em; /* Reduce margin for lists */
+    }
+
+    .rules-htp li, .rules-tips li {
+        font-size: 0.95rem; /* Adjust list item font size */
+    }
+}
+
+/* For very small screens (max-width 480px) */
+@media (max-width: 480px) {
+    .rules-modal {
+        width: 95%; /* Full-width modal for small screens */
+    }
+
+    .rules-close-btn {
+        font-size: 0.8rem; /* Even smaller close button font size */
+    }
+
+    .rules-intro h2, .rules-htp h2 {
+        font-size: 1.2rem; /* Smaller heading font size */
+    }
+
+    .rules-htp ul, .rules-tips ul {
+        margin-left: 0.75em; /* Further reduce margin for narrow screens */
+    }
+
+    .rules-htp li, .rules-tips li {
+        font-size: 0.9rem; /* Further adjust font size */
+    }
+
+    .rules-tips p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+}
+
+/* For extremely small screens (max-width 400px) */
+@media (max-width: 400px) {
+    .rules-modal {
+        width: 95%; /* Full-width modal */
+        padding: 0.75em; /* Reduce padding even more for very small screens */
+    }
+
+    .rules-close-btn {
+        font-size: 0.75rem; /* Smaller close button */
+    }
+
+    .rules-intro h2, .rules-htp h2 {
+        font-size: 1.1rem; /* Make headings smaller */
+    }
+
+    .rules-htp ul, .rules-tips ul {
+        margin-left: 0.5em; /* Minimize left margin */
+    }
+
+    .rules-htp li, .rules-tips li {
+        font-size: 0.85rem; /* Even smaller list item font size */
+    }
+
+    .rules-tips p {
+        font-size: 0.85rem; /* Adjust paragraph font size for small screens */
+    }
+}

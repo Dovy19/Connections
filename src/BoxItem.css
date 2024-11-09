@@ -1,0 +1,185 @@
+.BoxItem {
+    display: flex;
+    width: 11.5em;
+    height: 5em;
+    /* border: 3px solid black; */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5em;
+    background-color: rgba(239,239,230,1);
+    border-radius: 0.75em;
+    cursor: pointer;
+}
+
+.BoxItemActive {
+    display: flex;
+    width: 11.5em;
+    height: 5em;
+    /* border: 3px solid black; */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5em;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0.75em;
+    animation: scaleUp 0.2s forwards;
+}
+
+.BoxItemDisabled {
+    display: flex;
+    width: 11.5em;
+    height: 5em;
+    /* border: 3px solid black; */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5em;
+    background-color: rgba(239,239,230,1);
+    border-radius: 0.75em;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.BoxItemWord {
+    font-size: 1em;
+    color: black;
+}
+
+
+.BoxItemWordActive {
+    font-size: 1em;
+    color: white;
+}
+
+.submit-animation {
+    animation: scaleAndFade 0.9s ease forwards; 
+}
+
+@keyframes scaleAndFade {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        scale: 0.8;
+    }
+    to {
+        scale: 1.0;
+    }
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and smaller screens (min-width: 1024px to max-width: 768px) */
+@media (max-width: 1024px) {
+    .BoxItem, .BoxItemActive {
+        width: 10em;
+        height: 4.5em;
+    }
+
+    .BoxItemWord, .BoxItemWordActive {
+        font-size: 0.9em;
+    }
+}
+
+/* For tablets or medium screens (Max-width 768px) */
+@media (max-width: 768px) {
+    .BoxItem, .BoxItemActive {
+        width: 9em;
+        height: 4.2em;
+    }
+
+    .BoxItemWord, .BoxItemWordActive {
+        font-size: 0.85em;
+    }
+}
+
+/* For small screens (Max-width 640px) */
+@media (max-width: 640px) {
+    .BoxItem, .BoxItemActive {
+        width: 8em;
+        height: 4em;
+    }
+
+    .BoxItemWord, .BoxItemWordActive {
+        font-size: 0.8em;
+    }
+}
+
+/* For extra small screens (Max-width 480px) */
+@media (max-width: 480px) {
+    .BoxItem, .BoxItemActive {
+        width: 7em;
+        height: 3.5em;
+    }
+
+    .BoxItemWord, .BoxItemWordActive {
+        font-size: 0.75em;
+    }
+}
+
+/* For very small screens (Max-width 400px) */
+@media (max-width: 400px) {
+    .BoxItem, .BoxItemActive {
+        width: 6em;
+        height: 3.2em;
+    }
+
+    .BoxItemWord, .BoxItemWordActive {
+        font-size: 0.7em;
+    }
+}
+
+/* @media (max-width: 780px) {
+    .BoxItem {
+        width: 9em;
+    }
+}
+
+@media (max-width: 769px) {
+    .BoxItem {
+        width: 11em;
+    }
+}
+
+@media (max-width: 700px) {
+    .BoxItem {
+        width: 7em;
+    }
+}
+
+
+
+@media (max-width: 541px) {
+    .BoxItem {
+        width: 6.5em;
+    }
+}
+
+@media (max-width: 490px) {
+    .BoxItem {
+        width: 5.5em;
+    }
+    .BoxItemWord {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 400px) {
+    .BoxItem {
+        width: 4em;
+        height: 4em;
+    }
+    .BoxItemWord {
+        font-size: 0.7em;
+    }
+} */

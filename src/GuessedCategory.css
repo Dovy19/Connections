@@ -1,0 +1,84 @@
+.guessed-group {
+    width: 50em;
+    opacity: 0;
+    transform: translateY(-20px);
+    margin-bottom: 0.25em; /* Space between the category and the grid */
+    border-radius: 0.5em;
+    text-align: center;
+    animation: fadeIn 1.5s forwards;
+}
+
+.guessed-words {
+    font-weight: 400;
+    font-size: 1.2em; /* Adjust font size as needed */
+    color: black; /* A dark green text color */
+}
+
+.guessed-category {
+    color: black;
+}
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fully opaque */
+        transform: translateY(0); /* Move back to original position */
+    }
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens wider than 1024px (Large screens) */
+@media (max-width: 1024px) {
+    .guessed-group {
+        width: 45em; /* Adjust width slightly for large screens */
+    }
+
+    .guessed-words {
+        font-size: 1.1em; /* Slightly smaller text */
+    }
+}
+
+/* For tablets or medium screens (Max-width 768px) */
+@media (max-width: 768px) {
+    .guessed-group {
+        width: 35em; /* Adjust width for medium screens */
+    }
+
+    .guessed-words {
+        font-size: 1em; /* Slightly smaller font size */
+    }
+}
+
+/* For small screens (Max-width 640px) */
+@media (max-width: 640px) {
+    .guessed-group {
+        width: 30em; /* Adjust width for small screens */
+    }
+
+    .guessed-words {
+        font-size: 0.95em; /* Adjust font size for better fit */
+    }
+}
+
+/* For extra small screens (Max-width 480px) */
+@media (max-width: 480px) {
+    .guessed-group {
+        width: 25em; /* Further reduce width for smaller screens */
+    }
+
+    .guessed-words {
+        font-size: 0.9em; /* Reduce font size to fit text */
+    }
+}
+
+/* For very small screens (Max-width 400px) */
+@media (max-width: 400px) {
+    .guessed-group {
+        width: 20em; /* Minimize width for very small screens */
+    }
+
+    .guessed-words {
+        font-size: 0.85em; /* Further reduce font size */
+    }
+}

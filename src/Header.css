@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.header {
+    display: block;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* ensures it stays on top of other content */
+    /* background-color: purple; or another background for visibility */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+
+}
+.header-comp {
+    font-family: "Edu AU VIC WA NT Pre", cursive;
+    font-weight: 400;
+}
+
+.header h2 {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    font-size: 2.5em;
+}
+

@@ -1,0 +1,148 @@
+.BoxItemGrid {
+    display: grid;
+    max-width: 100%;
+    width: 50em; 
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto auto;
+    flex-wrap: wrap;
+    transform: translateY(1.25em); 
+    animation: comeIn 1s ease-out forwards;
+}
+
+.submitButton {
+    border: 0.125em solid transparent; 
+    background-color: #f0f0f0; 
+    cursor: not-allowed; 
+    margin-right: 0.75em; 
+}
+
+.shuffleButton {
+    margin-right: 0.75em;
+}
+
+.GameContainer {
+    width: 100%; 
+    max-width: 50em; 
+    margin: 0 auto;
+}
+
+.submitButton.active {
+    border: 0.125em solid rgba(0, 0, 0, 1); 
+    font-weight: 700; 
+    background-color: #ffffff; 
+    cursor: pointer; 
+}
+
+.submitButton:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.LivesDiv {
+    display: flex;
+    align-items: center;
+    padding-left: 1em; /* 16px */
+}
+
+.LivesDiv p {
+    font-weight: 700;
+}
+
+.feedback-summary {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; 
+    background-color: white; 
+    padding: 1em; 
+    border-radius: 0.5em; 
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    width: 18.75em; 
+}
+
+.feedback-hidden {
+    display: none;
+}
+
+.guess-row {
+    margin-bottom: 0.75em; 
+}
+
+.color-box {
+    display: inline-block;
+    width: 1.25em; 
+    height: 1.25em; 
+    border-radius: 0.25em; 
+    margin-right: 0.25em; 
+}
+
+@keyframes comeIn {
+    from {
+        transform: translateY(1.25em); 
+        opacity: 0.5;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .BoxItemGrid {
+        grid-template-columns: repeat(4, 1fr); /* Still 4 columns, but the items will shrink */
+        width: 90%;
+    }
+}
+
+@media (max-width: 780px) {
+    .BoxItemGrid {
+        grid-template-columns: repeat(4, 1fr); /* Keep 4 columns even on tablets */
+        width: 80%;
+    }
+}
+
+@media (max-width: 640px) {
+    .BoxItemGrid {
+        grid-template-columns: repeat(4, 1fr); /* Still 4 columns on smaller screens */
+        width: 100%; /* Take up full width of the container */
+    }
+
+}
+
+@media (max-width: 480px) {
+    .BoxItemGrid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on very small screens */
+        width: 100%;
+    }
+
+}
+
+/* @media (max-width: 780px) {
+    .BoxItemGrid {
+        width: 39em;
+    }
+}
+
+@media (max-width: 769px) {
+    .BoxItemGrid {
+        width: 47em;
+    }
+}
+
+@media (max-width: 640px) {
+    .BoxItemGrid {
+        width: 36em;
+    }
+}
+@media (max-width: 590px) {
+    .BoxItemGrid {
+        width: 33em;
+    }
+}
+
+@media (max-width: 500px) {
+    .BoxItemGrid {
+        width: 30em;
+    }
+} */
