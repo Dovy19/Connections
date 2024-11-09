@@ -131,18 +131,13 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --feedback-bg: #2a2a2a; /* Dark background for feedback summary */
-        --feedback-text: #f1f1f1; /* Light text color */
+    .feedback-summary {
+        background-color: #2a2a2a; /* Dark background for feedback summary */
+        color: #f1f1f1; /* Light text color */
     }
 
     .feedback-button {
-        color: var(--feedback-text); /* Ensure button is visible in dark mode */
-    }
-
-    .feedback-summary {
-        background-color: var(--feedback-bg); /* Apply dark background */
-        color: var(--feedback-text); /* Apply light text */
+        color: #f1f1f1; /* Ensure button is visible in dark mode */
     }
 
     .feedback-summary .color-box {
@@ -150,20 +145,15 @@
     }
 }
 
-/* Light Mode Styles */
+/* Light Mode Styles - Specific to feedback summary */
 @media (prefers-color-scheme: light) {
-    :root {
-        --feedback-bg: #ffffff; /* Light background for feedback summary */
-        --feedback-text: #333333; /* Dark text color */
+    .feedback-summary {
+        background-color: #ffffff; /* Light background for feedback summary */
+        color: #333333; /* Dark text color */
     }
 
     .feedback-button {
-        color: var(--feedback-text); /* Ensure button is visible in light mode */
-    }
-
-    .feedback-summary {
-        background-color: var(--feedback-bg); /* Apply light background */
-        color: var(--feedback-text); /* Apply dark text */
+        color: #333333; /* Ensure button is visible in light mode */
     }
 
     .feedback-summary .color-box {
