@@ -11,7 +11,7 @@
 
 .submitButton {
     border: 0.125em solid transparent; 
-    background-color: #f0f0f0; 
+    /* background-color: #f0f0f0;  */
     cursor: not-allowed; 
     margin-right: 0.75em; 
 }
@@ -29,7 +29,7 @@
 .submitButton.active {
     border: 0.125em solid rgba(0, 0, 0, 1); 
     font-weight: 700; 
-    background-color: #ffffff; 
+    /* background-color: #ffffff;  */
     cursor: pointer; 
 }
 
