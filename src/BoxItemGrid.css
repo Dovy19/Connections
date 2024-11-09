@@ -59,6 +59,18 @@
     box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2); 
     text-align: center;
     width: 18.75em; 
+    max-width: 90%;
+}
+
+.feedback-button {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #333;
 }
 
 .feedback-hidden {
@@ -116,6 +128,47 @@
         width: 100%;
     }
 
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --feedback-bg: #2a2a2a; /* Dark background for feedback summary */
+        --feedback-text: #f1f1f1; /* Light text color */
+    }
+
+    .feedback-button {
+        color: var(--feedback-text); /* Ensure button is visible in dark mode */
+    }
+
+    .feedback-summary {
+        background-color: var(--feedback-bg); /* Apply dark background */
+        color: var(--feedback-text); /* Apply light text */
+    }
+
+    .feedback-summary .color-box {
+        border: 1px solid #444; /* Light border for color boxes in dark mode */
+    }
+}
+
+/* Light Mode Styles */
+@media (prefers-color-scheme: light) {
+    :root {
+        --feedback-bg: #ffffff; /* Light background for feedback summary */
+        --feedback-text: #333333; /* Dark text color */
+    }
+
+    .feedback-button {
+        color: var(--feedback-text); /* Ensure button is visible in light mode */
+    }
+
+    .feedback-summary {
+        background-color: var(--feedback-bg); /* Apply light background */
+        color: var(--feedback-text); /* Apply dark text */
+    }
+
+    .feedback-summary .color-box {
+        border: 1px solid #ccc; /* Subtle border for color boxes in light mode */
+    }
 }
 
 /* @media (max-width: 780px) {
