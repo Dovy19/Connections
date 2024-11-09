@@ -1,0 +1,23 @@
+[33mcommit fb7f6ca72b1a7f06e7cbdff979cb0f607619eb27[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Dovydas <dovydas.skackovas@gmail.com>
+Date:   Sat Nov 9 22:59:23 2024 +0200
+
+    changed port for render
+
+[33mcommit 2815d781e13a704395a08fe174a65ce2baf324a8[m
+Author: Dovydas <dovydas.skackovas@gmail.com>
+Date:   Sat Nov 9 22:52:56 2024 +0200
+
+    added a new line in json file
+
+[33mcommit 00acdc4cf60fe8761f42a70377850d29246eb9a5[m
+Author: Dovydas <dovydas.skackovas@gmail.com>
+Date:   Sat Nov 9 22:45:51 2024 +0200
+
+    added a line in package.json
+
+[33mcommit 09a4160b8684ef2b7bf1a79181c6411b339c6d7f[m
+Author: Dovydas <dovydas.skackovas@gmail.com>
+Date:   Sat Nov 9 22:13:33 2024 +0200
+
+    first commit
