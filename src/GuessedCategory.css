@@ -2,16 +2,18 @@
     width: 50em;
     opacity: 0;
     transform: translateY(-20px);
-    margin-bottom: 0.25em; /* Space between the category and the grid */
+    margin-bottom: 0.25em; 
     border-radius: 0.5em;
     text-align: center;
     animation: fadeIn 1.5s forwards;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .guessed-words {
     font-weight: 400;
-    font-size: 1.2em; /* Adjust font size as needed */
-    color: black; /* A dark green text color */
+    font-size: 1.2em; 
+    color: black; 
 }
 
 .guessed-category {

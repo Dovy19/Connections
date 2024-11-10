@@ -25,10 +25,10 @@ export default function BoxItemGrid() {
             { category: "Vehicles", words: ["car", "bus", "train", "bicycle"] },
         ],
         medium: [
-            { category: "Animals", words: ["cat", "dog", "giraffe", "rhino"] },
-            { category: "Fruits", words: ["apple", "orange", "banana", "lemon"] },
-            { category: "Vehicles", words: ["car", "bus", "train", "bicycle"] },
-            { category: "Colors", words: ["blue", "red", "green", "yellow"] },
+            { category: "Space Objects", words: ["Comet", "Asteroid", "Nebula", "Galaxy"] },
+            { category: "Types of coffee beans", words: ["Robusta", "Arabica", "Liberica", "Excelsa"] },
+            { category: "Words of Latin Origin", words: ["Flora", "Fauna", "Tempus", "Aqua"] },
+            { category: "Rare Elements", words: ["Francium", "Astatine", "Promethium", "Neptunium"] },
         ],
         hard: [
             { category: "Animals", words: ["cat", "dog", "giraffe", "rhino"] },
@@ -40,18 +40,18 @@ export default function BoxItemGrid() {
     }
 
     const categoryIndexMap = {
-        "Animals": 0,
-        "Fruits": 1,
-        "Vehicles": 2,
-        "Colors": 3,
+        "Space Objects": 0,
+        "Types of coffee beans": 1,
+        "Words of Latin Origin": 2,
+        "Rare Elements": 3,
         "Stationery": 4,
     };
 
     const categoryColors = [
-        "#4CAF50",   // Permanent Green
-        "#008080",   // Viridian
-        "#00BFFF",   // Cerulean Blue
-        "#5C4B8A",   // Ultramarine Violet
+        "#D4CDCF",   // Permanent Green #adf7d1
+        "#B1A9AB",   // Viridian #95e8d7
+        "#7E797A",   // Cerulean Blue #7dace4
+        "#5A5556",   // Ultramarine Violet #8971d0
         "#8A2BE2"    // Permanent Violet
     ];
 
