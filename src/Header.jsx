@@ -1,6 +1,6 @@
 import "./Header.css"
 export default function Header() {
-    const date = new Date("November 9, 2024");
+    const date = new Date();
     const day = date.getDate();
     const month = date.toLocaleString('default', { month: 'long' });
     const year = date.getFullYear();
