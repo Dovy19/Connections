@@ -25,10 +25,10 @@ export default function BoxItemGrid() {
             { category: "Vehicles", words: ["car", "bus", "train", "bicycle"] },
         ],
         medium: [
-            { category: "Space Objects", words: ["Comet", "Asteroid", "Nebula", "Galaxy"] },
-            { category: "Types of coffee beans", words: ["Robusta", "Arabica", "Liberica", "Excelsa"] },
-            { category: "Words of Latin Origin", words: ["Flora", "Fauna", "Tempus", "Aqua"] },
-            { category: "Rare Elements", words: ["Francium", "Astatine", "Promethium", "Neptunium"] },
+            { category: "Actors Who Played Batman: ", words: ["Ben Affleck ", "Christian Bale", "George Clooney", "Robert Pattinson"] },
+            { category: "Famous actors to never win an oscar", words: ["Tom Cruise", "Samuel L Jackson", "Johnny Depp", "Keanu Reeves"] },
+            { category: "Horror Movies Themes", words: ["Terror", "Disturbing", "Thriller", "Chilling"] },
+            { category: "The 21 club", words: ["Savage", "Pilots", "Blackjack", "Jump Street"] },
         ],
         hard: [
             { category: "Animals", words: ["cat", "dog", "giraffe", "rhino"] },
@@ -40,10 +40,10 @@ export default function BoxItemGrid() {
     }
 
     const categoryIndexMap = {
-        "Space Objects": 0,
-        "Types of coffee beans": 1,
-        "Words of Latin Origin": 2,
-        "Rare Elements": 3,
+        "Actors Who Played Batman: ": 0,
+        "Famous actors to never win an oscar": 1,
+        "Horror Movies Themes": 2,
+        "The 21 club": 3,
         "Stationery": 4,
     };
 
