@@ -26,7 +26,7 @@ export default function Rules({ onClose }) {
                         <h2>Tips: </h2>
                         <ul>
                             <li>Use the Shuffle button to rearrange the grid if you're stuck.</li>
-                            <li>Each difficulty level adds more categories and words to challenge you.</li>
+                            <li>If you're stuck, you can use the "Deselect All" button to clear your selections and try again with a fresh perspective.</li>
                         </ul>
                         <p>Good luck, and see how many connections you can find!</p>
                     </div>
