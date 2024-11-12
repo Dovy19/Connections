@@ -25,10 +25,10 @@ export default function BoxItemGrid() {
             { category: "Vehicles", words: ["car", "bus", "train", "bicycle"] },
         ],
         medium: [
-            { category: "Actors Who Played Batman: ", words: ["Ben Affleck ", "Christian Bale", "George Clooney", "Robert Pattinson"] },
-            { category: "Famous actors to never win an oscar", words: ["Tom Cruise", "Samuel L Jackson", "Johnny Depp", "Keanu Reeves"] },
-            { category: "Horror Movies Themes", words: ["Terror", "Disturbing", "Thriller", "Chilling"] },
-            { category: "The 21 club", words: ["Savage", "Pilots", "Blackjack", "Jump Street"] },
+            { category: "Organizational Structures", words: ["League", "Division", "Conference", "Association"] },
+            { category: "Sports Area", words: ["Court", "Field", "Pitch", "Arena"] },
+            { category: "Basketball Court Zones", words: ["Elbow", "Wing", "Key", "Restricted Area"] },
+            { category: "Courtroom Elements", words: ["Guilty", "Bailiff", "Judge", "Trial"] },
         ],
         hard: [
             { category: "Animals", words: ["cat", "dog", "giraffe", "rhino"] },
@@ -40,10 +40,10 @@ export default function BoxItemGrid() {
     }
 
     const categoryIndexMap = {
-        "Actors Who Played Batman: ": 0,
-        "Famous actors to never win an oscar": 1,
-        "Horror Movies Themes": 2,
-        "The 21 club": 3,
+        "Organizational Structures": 0,
+        "Sports Area": 1,
+        "Basketball Court Zones": 2,
+        "Courtroom Elements": 3,
         "Stationery": 4,
     };
 
