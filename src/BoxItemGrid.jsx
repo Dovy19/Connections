@@ -25,10 +25,10 @@ export default function BoxItemGrid() {
             { category: "Vehicles", words: ["car", "bus", "train", "bicycle"] },
         ],
         medium: [
-            { category: "Organizational Structures", words: ["League", "Division", "Conference", "Association"] },
-            { category: "Sports Area", words: ["Court", "Field", "Pitch", "Arena"] },
-            { category: "Basketball Court Zones", words: ["Elbow", "Wing", "Key", "Restricted Area"] },
-            { category: "Courtroom Elements", words: ["Guilty", "Bailiff", "Judge", "Trial"] },
+            { category: "DC villains", words: ["Ra's al ghul", "Bane", "Penguin", "Lex Luthor"] },
+            { category: "Moons In Solar System", words: ["Titan", "Callisto", "Io", "Ganymede"] },
+            { category: "Greek mythology names", words: ["Apollo", "Selene", "Hyperion", "Pandora"] },
+            { category: "Folklore Entities", words: ["Nine Tailed Fox", "Banshee", "Kraken", "Chupacabra"] },
         ],
         hard: [
             { category: "Animals", words: ["cat", "dog", "giraffe", "rhino"] },
@@ -40,10 +40,10 @@ export default function BoxItemGrid() {
     }
 
     const categoryIndexMap = {
-        "Organizational Structures": 0,
-        "Sports Area": 1,
-        "Basketball Court Zones": 2,
-        "Courtroom Elements": 3,
+        "DC villains": 0,
+        "Moons In Solar System": 1,
+        "Greek mythology names": 2,
+        "Folklore Entities": 3,
         "Stationery": 4,
     };
 
