@@ -48,11 +48,11 @@ export default function BoxItemGrid() {
     };
 
     const categoryColors = [
-        "#D4CDCF",   // Permanent Green #adf7d1
-        "#B1A9AB",   // Viridian #95e8d7
-        "#7E797A",   // Cerulean Blue #7dace4
-        "#5A5556",   // Ultramarine Violet #8971d0
-        "#8A2BE2"    // Permanent Violet
+        "linear-gradient(90deg, rgba(212,205,207,1) 70%, rgba(0,212,255,1) 100%)",  
+        "linear-gradient(90deg, rgba(177,169,171,1) 70%, rgba(35,191,77,1) 100%)",  
+        "linear-gradient(90deg, rgba(126,121,122,1) 70%, rgba(194,195,22,1) 100%)",   
+        "linear-gradient(90deg, rgba(90,85,86,1) 70%, rgba(206,20,61,1) 100%)",   
+        "#8A2BE2"    
     ];
 
     const [difficulty, setDifficulty] = useState("medium")
@@ -297,30 +297,40 @@ export default function BoxItemGrid() {
             {gameOver ? "" : shuffledWords.length !== 0 ? <button className="deselectButton" onClick={handleDeselect}>Deselect All</button> : ""}
             
             {(gameOver || shuffledWords.length === 0) && (
-            <div className={`feedback-summary ${!displayFeedback ? "feedback-hidden" : ""} `}>
-                <button className="feedback-button" onClick={handleDisplayFeedback}>&times;</button>
-                <h2>{health ? "Congratulations!" : "Better Luck Next Time!"}</h2>
-                <h3>Your Guesses:</h3>
-                {submissionFeedback.map((guessColors, index) => (
-                    <div key={index} className="guess-row">
-                        <span>Attempt {index + 1}:</span>
-                        {guessColors.map((color, colorIndex) => (
-                            <span
-                                key={colorIndex}
-                                className="color-box"
-                                style={{
-                                    display: "inline-block",
-                                    width: "1.25em",
-                                    height: "1.25em",
-                                    backgroundColor: color,
-                                    marginLeft: "0.25em",
-                                    borderRadius: "0.25em"
-                                }}
-                            />
-                        ))}
-                    </div>
-                ))}
-            </div>
+            <div className={`feedback-summary ${!displayFeedback ? "feedback-hidden" : ""}`}>
+            <button className="feedback-button" onClick={handleDisplayFeedback}>&times;</button>
+            <h2>{health ? "Congratulations!" : "Better Luck Next Time!"}</h2>
+            <h3>Your Guesses:</h3>
+            {submissionFeedback.map((guessColors, index) => (
+                <div key={index} className="guess-row">
+                    <span>Attempt {index + 1}:</span>
+                    {guessColors.map((gradient, colorIndex) => {
+                        // Extract color values from the linear-gradient string
+                        const gradientColors = gradient.match(/rgba?\([^\)]+\)/g); // Match all rgba values in the gradient
+                        if (gradientColors && gradientColors.length > 1) {
+                            // If there are at least 2 colors, take the second one
+                            const secondColor = gradientColors[1];
+                            return (
+                                <span
+                                    key={colorIndex}
+                                    className="color-box"
+                                    style={{
+                                        display: "inline-block",
+                                        width: "1.25em",
+                                        height: "1.25em",
+                                        background: secondColor,
+                                        marginLeft: "0.25em",
+                                        borderRadius: "0.25em"
+                                    }}
+                                />
+                            );
+                        }
+                        return null; // Return null if no second color is found
+                    })}
+                </div>
+            ))}
+        </div>
+        
         )}
 
         </div>
