@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 0.5em;
+    margin-left: 0.5em;
     background-color: rgba(239,239,230,1);
     border-radius: 0.75em;
     cursor: pointer;
@@ -84,6 +85,7 @@
     .BoxItem, .BoxItemActive {
         width: 10em;
         height: 4.5em;
+        margin-left: 0em;
     }
 
     .BoxItemWord, .BoxItemWordActive {
