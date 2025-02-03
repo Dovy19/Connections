@@ -118,7 +118,7 @@
 /* For extra small screens (Max-width 480px) */
 @media (max-width: 480px) {
     .BoxItem, .BoxItemActive {
-        width: 7em;
+        width: 6.5em;
         height: 3.5em;
     }
 

@@ -2,7 +2,9 @@
     display: grid;
     max-width: 100%;
     width: 50em; 
-    justify-content: space-evenly;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
     grid-template-columns: auto auto auto auto;
     flex-wrap: wrap;
     transform: translateY(1.25em); 
@@ -103,14 +105,14 @@
 @media (max-width: 1024px) {
     .BoxItemGrid {
         grid-template-columns: repeat(4, 1fr); /* Still 4 columns, but the items will shrink */
-        width: 90%;
+        width: 100%;
     }
 }
 
 @media (max-width: 780px) {
     .BoxItemGrid {
         grid-template-columns: repeat(4, 1fr); /* Keep 4 columns even on tablets */
-        width: 80%;
+        width: 100%;
     }
 }
 
