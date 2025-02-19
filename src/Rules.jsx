@@ -22,14 +22,14 @@ export default function Rules({ onClose }) {
                             <li>Guess incorrectly, and you'll lose a life. Lose all your lives, and the game is over!</li>
                         </ul>
                     </article>
-                    <div className="rules-tips">
+                    {/* <div className="rules-tips">
                         <h2>Tips: </h2>
                         <ul>
                             <li>Use the Shuffle button to rearrange the grid if you're stuck.</li>
                             <li>If you're stuck, you can use the "Deselect All" button to clear your selections and try again with a fresh perspective.</li>
                         </ul>
                         <p>Good luck, and see how many connections you can find!</p>
-                    </div>
+                    </div> */}
                 </section>
             </div>
         </div>

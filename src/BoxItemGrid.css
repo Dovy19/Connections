@@ -22,6 +22,10 @@
     margin-right: 0.75em;
 }
 
+.shuffleButton:hover,.deselectButton:hover {
+    border: 1px solid rgba(0, 0, 0, 1);
+}
+
 .GameContainer {
     width: 100%; 
     max-width: 50em; 
@@ -37,6 +41,7 @@
 
 .submitButton:hover {
     background-color: rgba(0, 0, 0, 0.1);
+    border: 0.125em solid rgba(0, 0, 0, 1);
 }
 
 .LivesDiv {
@@ -104,29 +109,29 @@
 
 @media (max-width: 1024px) {
     .BoxItemGrid {
-        grid-template-columns: repeat(4, 1fr); /* Still 4 columns, but the items will shrink */
+        grid-template-columns: repeat(4, 1fr); 
         width: 100%;
     }
 }
 
 @media (max-width: 780px) {
     .BoxItemGrid {
-        grid-template-columns: repeat(4, 1fr); /* Keep 4 columns even on tablets */
+        grid-template-columns: repeat(4, 1fr); 
         width: 100%;
     }
 }
 
 @media (max-width: 640px) {
     .BoxItemGrid {
-        grid-template-columns: repeat(4, 1fr); /* Still 4 columns on smaller screens */
-        width: 100%; /* Take up full width of the container */
+        grid-template-columns: repeat(4, 1fr); 
+        width: 100%; 
     }
 
 }
 
 @media (max-width: 480px) {
     .BoxItemGrid {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns on very small screens */
+        grid-template-columns: repeat(4, 1fr); 
         width: 100%;
     }
 
@@ -134,32 +139,32 @@
 
 @media (prefers-color-scheme: dark) {
     .feedback-summary {
-        background-color: #2a2a2a; /* Dark background for feedback summary */
-        color: #f1f1f1; /* Light text color */
+        background-color: #2a2a2a; 
+        color: #f1f1f1; 
     }
 
     .feedback-button {
-        color: #f1f1f1; /* Ensure button is visible in dark mode */
+        color: #f1f1f1; 
     }
 
     .feedback-summary .color-box {
-        border: 1px solid #444; /* Light border for color boxes in dark mode */
+        border: 1px solid #444; 
     }
 }
 
 /* Light Mode Styles - Specific to feedback summary */
 @media (prefers-color-scheme: light) {
     .feedback-summary {
-        background-color: #ffffff; /* Light background for feedback summary */
-        color: #333333; /* Dark text color */
+        background-color: #ffffff; 
+        color: #333333; 
     }
 
     .feedback-button {
-        color: #333333; /* Ensure button is visible in light mode */
+        color: #333333; 
     }
 
     .feedback-summary .color-box {
-        border: 1px solid #ccc; /* Subtle border for color boxes in light mode */
+        border: 1px solid #ccc; 
     }
 }
 

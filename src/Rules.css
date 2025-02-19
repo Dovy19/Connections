@@ -1,4 +1,4 @@
-/* Default styles for the overlay and modal */
+
 .rules-overlay {
     position: fixed;
     top: 0;
@@ -14,12 +14,12 @@
 
 .rules-modal {
     background-color: white;
-    padding: 1.25em; /* 20px */
+    padding: 1.25em; 
     width: 80%;
-    max-width: 31.25em; /* 500px */
-    border-radius: 0.75em; /* 12px */
-    border: 0.125em solid black; /* 2px */
-    box-shadow: 0px 0.25em 0.625em rgba(0, 0, 0, 0.3); /* 4px, 10px */
+    max-width: 31.25em; 
+    border-radius: 0.75em; 
+    border: 0.125em solid black; 
+    box-shadow: 0px 0.25em 0.625em rgba(0, 0, 0, 0.3); 
     overflow-y: auto;
     max-height: 80vh;
     text-align: center;
@@ -34,28 +34,27 @@
 
 .rules-htp ul, 
 .rules-tips ul {
-    margin-left: 1.25em; /* 20px */
+    margin-left: 1.25em; 
     text-align: left;
 }
 
 .rules-htp li, 
 .rules-tips li {
     list-style-type: decimal;
-    margin-bottom: 0.5em; /* 8px */
+    margin-bottom: 0.5em; 
 }
-
-.rules-htp li:last-child, 
+ 
 .rules-tips li:last-child {
-    border-bottom: 0.125em solid black; /* 2px */
+    border-bottom: 0.125em solid black; 
 }
 
 .rules-close-btn {
     position: absolute;
-    top: 0.625em; /* 10px */
-    right: 0.625em; /* 10px */
+    top: 0.625em; 
+    right: 0.625em; 
     background: none;
     border: none;
-    font-size: 1.2rem; /* Using rem for font-size is fine */
+    font-size: 1.2rem; 
     cursor: pointer;
     color: #666;
 }
@@ -72,30 +71,30 @@
 /* Dark Mode Styles */
 @media (prefers-color-scheme: dark) {
     .rules-modal {
-      background-color: #2c2c2c; /* Dark background for modal */
-      color: #e0e0e0; /* Light text color */
-      border: 0.125em solid #444; /* Darker border */
-      box-shadow: 0px 0.25em 0.625em rgba(255, 255, 255, 0.2); /* Lighter shadow for dark mode */
+      background-color: #2c2c2c; 
+      color: #e0e0e0; 
+      border: 0.125em solid #444; 
+      box-shadow: 0px 0.25em 0.625em rgba(255, 255, 255, 0.2); 
     }
   
     .rules-intro h2,
     .rules-htp h2 {
-      color: #e0e0e0; /* Light heading color */
+      color: #e0e0e0; 
     }
   
     .rules-htp ul,
     .rules-tips ul {
-      color: #bbb; /* Lighter list item text */
+      color: #bbb; 
     }
   
     .rules-htp li,
     .rules-tips li {
-      color: #ccc; /* Lighter list item text */
+      color: #ccc; 
     }
   
     .rules-htp li:last-child, 
     .rules-tips li:last-child {
-      border-bottom: 0.125em solid #666; /* Darker border for last items */
+      border-bottom: 0.125em solid #666; 
     }
   
     .rules-close-btn {
@@ -103,109 +102,107 @@
     }
   
     .rules-close-btn:hover {
-      color: #fff; /* White close button hover in dark mode */
+      color: #fff; 
     }
   
     .rules-tips p {
-      color: #ddd; /* Lighter tips text */
+      color: #ddd; 
     }
   }
 
 /* Media Queries for Responsiveness */
 
-/* For large screens, no changes needed */
+
 @media (max-width: 1024px) {
     .rules-modal {
-        width: 70%; /* Reduce width slightly for large screens */
+        width: 70%; 
     }
 }
 
 /* For tablets (max-width 768px) */
 @media (max-width: 768px) {
     .rules-modal {
-        width: 85%; /* Slightly larger modal width for tablets */
+        width: 85%; 
     }
 
     .rules-close-btn {
-        font-size: 1rem; /* Adjust font size of close button */
+        font-size: 1rem; 
     }
 }
 
 /* For smaller screens (max-width 640px) */
 @media (max-width: 640px) {
     .rules-modal {
-        width: 90%; /* Increase modal width for smaller screens */
-        padding: 1em; /* Slightly less padding to accommodate small screens */
+        width: 60%; 
+        padding: 1em; 
     }
 
     .rules-close-btn {
-        font-size: 0.9rem; /* Reduce font size for small screens */
+        font-size: 0.9rem; 
     }
 
     .rules-intro h2, .rules-htp h2 {
-        font-size: 1.5rem; /* Adjust heading font size */
+        font-size: 1.2rem; 
     }
 
     .rules-htp ul, .rules-tips ul {
-        margin-left: 1em; /* Reduce margin for lists */
+        margin-left: 1em; 
     }
 
     .rules-htp li, .rules-tips li {
-        font-size: 0.95rem; /* Adjust list item font size */
+        font-size: 0.95rem; 
     }
 }
 
-/* For very small screens (max-width 480px) */
 @media (max-width: 480px) {
     .rules-modal {
-        width: 95%; /* Full-width modal for small screens */
+        width: 80%; 
     }
 
     .rules-close-btn {
-        font-size: 0.8rem; /* Even smaller close button font size */
+        font-size: 0.8rem; 
     }
 
     .rules-intro h2, .rules-htp h2 {
-        font-size: 1.2rem; /* Smaller heading font size */
+        font-size: 1rem; 
     }
 
     .rules-htp ul, .rules-tips ul {
-        margin-left: 0.75em; /* Further reduce margin for narrow screens */
+        margin-left: 0.75em; 
     }
 
     .rules-htp li, .rules-tips li {
-        font-size: 0.9rem; /* Further adjust font size */
+        font-size: 0.9rem; 
     }
 
     .rules-tips p {
-        font-size: 0.9rem; /* Adjust paragraph font size */
+        font-size: 0.9rem; 
     }
 }
 
-/* For extremely small screens (max-width 400px) */
 @media (max-width: 400px) {
     .rules-modal {
-        width: 95%; /* Full-width modal */
-        padding: 0.75em; /* Reduce padding even more for very small screens */
+        width: 95%; 
+        padding: 0.75em; 
     }
 
     .rules-close-btn {
-        font-size: 0.75rem; /* Smaller close button */
+        font-size: 0.75rem; 
     }
 
     .rules-intro h2, .rules-htp h2 {
-        font-size: 1.1rem; /* Make headings smaller */
+        font-size: 1.1rem; 
     }
 
     .rules-htp ul, .rules-tips ul {
-        margin-left: 0.5em; /* Minimize left margin */
+        margin-left: 0.5em; 
     }
 
     .rules-htp li, .rules-tips li {
-        font-size: 0.85rem; /* Even smaller list item font size */
+        font-size: 0.85rem; 
     }
 
     .rules-tips p {
-        font-size: 0.85rem; /* Adjust paragraph font size for small screens */
+        font-size: 0.85rem;
     }
 }

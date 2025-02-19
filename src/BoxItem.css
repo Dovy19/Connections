@@ -80,7 +80,6 @@
 
 /* Media Queries for Responsiveness */
 
-/* Tablets and smaller screens (min-width: 1024px to max-width: 768px) */
 @media (max-width: 1024px) {
     .BoxItem, .BoxItemActive {
         width: 10em;
@@ -93,7 +92,7 @@
     }
 }
 
-/* For tablets or medium screens (Max-width 768px) */
+
 @media (max-width: 768px) {
     .BoxItem, .BoxItemActive {
         width: 9em;
@@ -105,7 +104,7 @@
     }
 }
 
-/* For small screens (Max-width 640px) */
+
 @media (max-width: 640px) {
     .BoxItem, .BoxItemActive {
         width: 8em;
@@ -117,7 +116,7 @@
     }
 }
 
-/* For extra small screens (Max-width 480px) */
+
 @media (max-width: 480px) {
     .BoxItem, .BoxItemActive {
         width: 6.5em;
@@ -129,7 +128,7 @@
     }
 }
 
-/* For very small screens (Max-width 400px) */
+
 @media (max-width: 400px) {
     .BoxItem, .BoxItemActive {
         width: 6em;
@@ -141,47 +140,3 @@
     }
 }
 
-/* @media (max-width: 780px) {
-    .BoxItem {
-        width: 9em;
-    }
-}
-
-@media (max-width: 769px) {
-    .BoxItem {
-        width: 11em;
-    }
-}
-
-@media (max-width: 700px) {
-    .BoxItem {
-        width: 7em;
-    }
-}
-
-
-
-@media (max-width: 541px) {
-    .BoxItem {
-        width: 6.5em;
-    }
-}
-
-@media (max-width: 490px) {
-    .BoxItem {
-        width: 5.5em;
-    }
-    .BoxItemWord {
-        font-size: 0.8em;
-    }
-}
-
-@media (max-width: 400px) {
-    .BoxItem {
-        width: 4em;
-        height: 4em;
-    }
-    .BoxItemWord {
-        font-size: 0.7em;
-    }
-} */

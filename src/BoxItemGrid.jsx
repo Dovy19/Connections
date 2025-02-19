@@ -10,13 +10,7 @@ import "./Feedback.css";
 
 
 export default function BoxItemGrid() {
-    // const [words] = useState([
-    //     "cat", "dog", "giraffe", "rhino",
-    //     "apple", "orange", "banana", "lemon",
-    //     "car", "bus", "train", "bicycle",
-    //     "blue", "red", "green", "yellow",
-    //     "pen", "pencil", "marker", "eraser"
-    // ]);
+
 
     const groups = {
         easy: [
@@ -56,7 +50,7 @@ export default function BoxItemGrid() {
     ];
 
     const [difficulty, setDifficulty] = useState("medium")
-    const groupWords = groups[difficulty].map(group => group.words).flat();
+    // const groupWords = groups[difficulty].map(group => group.words).flat();
     const [shuffledWords, setShuffledWords] = useState([]);
     const [selectedWords, setSelectedWords] = useState([]);
     const [health, setHealth] = useState(4);

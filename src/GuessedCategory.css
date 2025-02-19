@@ -23,64 +23,64 @@
 
 @keyframes fadeIn {
     to {
-        opacity: 1; /* Fully opaque */
-        transform: translateY(0); /* Move back to original position */
+        opacity: 1; 
+        transform: translateY(0); 
     }
 }
 
 /* Media Queries for Responsiveness */
 
-/* For screens wider than 1024px (Large screens) */
+
 @media (max-width: 1024px) {
     .guessed-group {
-        width: 45em; /* Adjust width slightly for large screens */
+        width: 45em; 
     }
 
     .guessed-words {
-        font-size: 1.1em; /* Slightly smaller text */
+        font-size: 1.1em; 
     }
 }
 
-/* For tablets or medium screens (Max-width 768px) */
+
 @media (max-width: 768px) {
     .guessed-group {
-        width: 35em; /* Adjust width for medium screens */
+        width: 35em; 
     }
 
     .guessed-words {
-        font-size: 1em; /* Slightly smaller font size */
+        font-size: 1em; 
     }
 }
 
-/* For small screens (Max-width 640px) */
+
 @media (max-width: 640px) {
     .guessed-group {
-        width: 30em; /* Adjust width for small screens */
+        width: 30em; 
     }
 
     .guessed-words {
-        font-size: 0.95em; /* Adjust font size for better fit */
+        font-size: 0.95em; 
     }
 }
 
-/* For extra small screens (Max-width 480px) */
+
 @media (max-width: 480px) {
     .guessed-group {
-        width: 25em; /* Further reduce width for smaller screens */
+        width: 25em; 
     }
 
     .guessed-words {
-        font-size: 0.9em; /* Reduce font size to fit text */
+        font-size: 0.9em; 
     }
 }
 
-/* For very small screens (Max-width 400px) */
+
 @media (max-width: 400px) {
     .guessed-group {
-        width: 20em; /* Minimize width for very small screens */
+        width: 20em; 
     }
 
     .guessed-words {
-        font-size: 0.85em; /* Further reduce font size */
+        font-size: 0.85em; 
     }
 }

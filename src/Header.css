@@ -4,9 +4,7 @@
     display: block;
     top: 0;
     width: 100%;
-    z-index: 1000; /* ensures it stays on top of other content */
-    /* background-color: purple; or another background for visibility */
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    z-index: 1000; 
 
 }
 .header-comp {
