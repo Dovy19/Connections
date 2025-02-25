@@ -2,43 +2,86 @@ import BoxItem from "./BoxItem"
 import {useState, useEffect} from "react";
 import "./BoxItemGrid.css";
 import groupChecker from "./groupChecker";
-import "./DifficultyButtons.css"
 import Lives from "./Lives";
 import shuffleArray from "./shuffleArray";
 import GuessedCategory from "./GuessedCategory";
 import "./Feedback.css";
+import axios from "axios";
 
 
 export default function BoxItemGrid() {
 
 
+    const [puzzle, setPuzzle] = useState(null);
+    const [error, setError] = useState(null);
+    const [shuffledWords, setShuffledWords] = useState([]);
+    const [selectedWords, setSelectedWords] = useState([]);
+    const [health, setHealth] = useState(4);
+    const [gameOver, setGameOver] = useState(false);
+    const [correctCategory, setCorrectCategory] = useState(null);
+    const [correctGuesses, setCorrectGuesses] = useState([]);
+    const [feedbackMessage, setFeedbackMessage] = useState("");
+    const [showFeedback, setShowFeedback] = useState(false);
+    const [submissionFeedback, setSubmissionFeedback] = useState([]);
+    const [animateSubmission, setAnimateSubmission] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [displayFeedback, setDisplayFeedback] = useState(true);
+    
+
+    useEffect(() => {
+        const fetchPuzzle = async () => {
+            const storedPuzzle = localStorage.getItem("currentPuzzle");
+            const storedTime = localStorage.getItem("puzzleFetchedAt");
+    
+            if (storedPuzzle && storedTime) {
+                const timeElapsed = Date.now() - parseInt(storedTime, 10);
+    
+                // If it's been less than 24 hours (or your test interval), use the stored puzzle
+                if (timeElapsed < 24 * 60 * 60 * 1000) { 
+                    setPuzzle(JSON.parse(storedPuzzle));
+                    return;
+                }
+            }
+    
+            // If no puzzle is stored or it's time for a new one, fetch from API
+            try {
+                const response = await axios.get("https://connectionsapi.onrender.com/api/puzzle/next");
+                setPuzzle(response.data);
+    
+                // Store the new puzzle and timestamp
+                localStorage.setItem("currentPuzzle", JSON.stringify(response.data));
+                localStorage.setItem("puzzleFetchedAt", Date.now().toString());
+            } catch (err) {
+                setError(err.message);
+            }
+        };
+    
+        fetchPuzzle();
+    }, []);
+
+    useEffect(() => {
+        if(puzzle) {
+            initializeWords();
+        }
+    }, [puzzle]);
+
+    if (!puzzle) return <div>Loading...</div>
+    if (error) return <div>Error: {error}</div>
+
     const groups = {
-        easy: [
-            { category: "Animals", words: ["cat", "dog", "giraffe", "rhino"] },
-            { category: "Fruits", words: ["apple", "orange", "banana", "lemon"] },
-            { category: "Vehicles", words: ["car", "bus", "train", "bicycle"] },
-        ],
         medium: [
-            { category: "DC villains", words: ["Ra's al ghul", "Bane", "Penguin", "Lex Luthor"] },
-            { category: "Moons In Solar System", words: ["Titan", "Callisto", "Io", "Ganymede"] },
-            { category: "Greek mythology names", words: ["Apollo", "Selene", "Hyperion", "Pandora"] },
-            { category: "Folklore Entities", words: ["Nine Tailed Fox", "Banshee", "Kraken", "Chupacabra"] },
-        ],
-        hard: [
-            { category: "Animals", words: ["cat", "dog", "giraffe", "rhino"] },
-            { category: "Fruits", words: ["apple", "orange", "banana", "lemon"] },
-            { category: "Vehicles", words: ["car", "bus", "train", "bicycle"] },
-            { category: "Colors", words: ["blue", "red", "green", "yellow"] },
-            { category: "Stationery", words: ["pen", "pencil", "marker", "eraser"] },
+            { category: puzzle.firstCategory.categoryName, words: puzzle.firstCategory.categoryItems },
+            { category: puzzle.secondCategory.categoryName, words: puzzle.secondCategory.categoryItems },
+            { category: puzzle.thirdCategory.categoryName, words: puzzle.thirdCategory.categoryItems },
+            { category: puzzle.fourthCategory.categoryName, words: puzzle.fourthCategory.categoryItems },
         ],
     }
 
     const categoryIndexMap = {
-        "DC villains": 0,
-        "Moons In Solar System": 1,
-        "Greek mythology names": 2,
-        "Folklore Entities": 3,
-        "Stationery": 4,
+        [groups.medium[0].category]: 0,
+        [groups.medium[1].category]: 1,
+        [groups.medium[2].category]: 2,
+        [groups.medium[3].category]: 3,
     };
 
     const categoryColors = [
@@ -49,22 +92,7 @@ export default function BoxItemGrid() {
         "#8A2BE2"    
     ];
 
-    const [difficulty, setDifficulty] = useState("medium")
-    // const groupWords = groups[difficulty].map(group => group.words).flat();
-    const [shuffledWords, setShuffledWords] = useState([]);
-    const [selectedWords, setSelectedWords] = useState([]);
-    const [health, setHealth] = useState(4);
-    const [gameOver, setGameOver] = useState(false);
-    const [correctCategory, setCorrectCategory] = useState(null);
-    const [correctGuesses, setCorrectGuesses] = useState([]);
-    const allCategories = groups[difficulty];
-    const [feedbackMessage, setFeedbackMessage] = useState("");
-    const [showFeedback, setShowFeedback] = useState(false);
-    const [submissionFeedback, setSubmissionFeedback] = useState([]);
-    const [animateSubmission, setAnimateSubmission] = useState(false);
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [displayFeedback, setDisplayFeedback] = useState(true);
-    // const originalWords = [...initialWords];
+
 
 
     const handleDisplayFeedback = () => {
@@ -85,8 +113,9 @@ export default function BoxItemGrid() {
         setSelectedWords([]);
     }
 
+
     const initializeWords = () => {
-        const groupWords = groups[difficulty].map(group => group.words).flat();
+        const groupWords = groups.medium.map(group => group.words).flat();
         setShuffledWords(shuffleArray([...groupWords])); // Shuffle on initialization
         setCorrectGuesses([]);
         setGameOver(false);
@@ -102,14 +131,14 @@ export default function BoxItemGrid() {
     const handleSubmit = () => {
         if (selectedWords.length === 4 && !isSubmitting) {
             setIsSubmitting(true);
-            const matchedGroup = groups[difficulty].find(group =>
+            const matchedGroup = groups.medium.find(group =>
                 group.words.every(word => selectedWords.includes(word))
             );
             setAnimateSubmission(true);
             endAnimation();
             const feedback = selectedWords.map(word => {
                 const category = Object.keys(categoryIndexMap).find(cat =>
-                    groups[difficulty].some(group => 
+                    groups.medium.some(group => 
                         group.category === cat && group.words.includes(word)
                     )
                 );
@@ -169,23 +198,6 @@ export default function BoxItemGrid() {
         setDisplayFeedback(true);
     }
 
-    const difficultySelector = (e) => {
-       const newDifficulty = e.target.value;
-       setDifficulty(newDifficulty);
-       setSelectedWords([]);
-       setHealth(4);
-       setGameOver(false);
-       setCorrectGuesses([]);
-       initializeWords();
-       setSubmissionFeedback([]);
-       setIsSubmitting(false);
-       setDisplayFeedback(true);
-    }
-
-
-    useEffect(() => {
-        initializeWords();
-    }, [difficulty]);
 
     const handleShuffle = () => {
         setShuffledWords(() => shuffleArray([...shuffledWords]));
@@ -193,31 +205,6 @@ export default function BoxItemGrid() {
 
     return (
             <div className="GameContainer">
-                {!gameOver && (
-                <div className="DifficultyButtons">
-        {/* <button 
-            value="easy" 
-            onClick={difficultySelector} 
-            className={difficulty === "easy" ? "active" : ""}
-            >
-            Easy
-        </button>
-        <button 
-            value="medium" 
-            onClick={difficultySelector} 
-            className={difficulty === "medium" ? "active" : ""}
-        >
-            Medium
-        </button>
-        <button 
-            value="hard" 
-            onClick={difficultySelector} 
-            className={difficulty === "hard" ? "active" : ""}
-        >
-            Hard
-        </button> */}
-    </div>
-    )}
             {correctGuesses.map((guess, index) => {
                 const fixedIndex = categoryIndexMap[guess.category];
                 return (
@@ -236,7 +223,7 @@ export default function BoxItemGrid() {
             )}
 
             {gameOver && (
-                allCategories
+                groups.medium
                     .filter(group => !correctGuesses.some(guess => guess.category === group.category))
                     .map((group, index) => (
                         <GuessedCategory 
@@ -249,7 +236,7 @@ export default function BoxItemGrid() {
             )}
            
            {!gameOver && (
-            <div className="BoxItemGrid" key={difficulty}>
+            <div className="BoxItemGrid" key="medium">
                 {shuffledWords.map((word, i) => {
                 return <BoxItem 
                 key={i} 
