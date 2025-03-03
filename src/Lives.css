@@ -6,3 +6,10 @@
     border-radius: 50%;
     
 }
+
+@media (max-width: 600px) {
+    .Lives {
+        height: 0.75em;
+        width: 0.75em;
+    }
+}

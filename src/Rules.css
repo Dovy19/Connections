@@ -49,14 +49,18 @@
 }
 
 .rules-close-btn {
-    position: absolute;
-    top: 0.625em; 
-    right: 0.625em; 
     background: none;
     border: none;
     font-size: 1.2rem; 
     cursor: pointer;
     color: #666;
+    border: 2px solid black;
+}
+
+.rules-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.75em;
 }
 
 .rules-close-btn:hover {

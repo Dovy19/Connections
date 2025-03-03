@@ -11,6 +11,8 @@
     animation: comeIn 1s ease-out forwards;
 }
 
+
+
 .submitButton {
     border: 0.125em solid transparent; 
     /* background-color: #f0f0f0;  */
@@ -30,6 +32,7 @@
     width: 100%; 
     max-width: 50em; 
     margin: 0 auto;
+    position: relative;
 }
 
 .submitButton.active {
@@ -47,11 +50,17 @@
 .LivesDiv {
     display: flex;
     align-items: center;
-    padding-left: 1em; /* 16px */
+    padding-left: 1em;
+    
 }
 
 .LivesDiv p {
     font-weight: 700;
+    font-size: 1rem;
+}
+
+.author-div {
+    margin-left: auto;
 }
 
 .feedback-summary {
@@ -125,6 +134,9 @@
     .BoxItemGrid {
         grid-template-columns: repeat(4, 1fr); 
         width: 100%; 
+    }
+    .LivesDiv p {
+        font-size: 0.75rem;
     }
 
 }

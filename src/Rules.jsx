@@ -5,7 +5,6 @@ export default function Rules({ onClose }) {
     return (
         <div className="rules-overlay">
             <div className="rules-modal">
-                <button className="rules-close-btn" onClick={onClose}>&times;</button>
                 <section>
                     <div className="rules-intro">
                         <h2>Welcome to the Connections Game!</h2>
@@ -21,15 +20,10 @@ export default function Rules({ onClose }) {
                             <li>If your guess is correct, the group will be highlighted and move to the top of the grid.</li>
                             <li>Guess incorrectly, and you'll lose a life. Lose all your lives, and the game is over!</li>
                         </ul>
+                        <div className="rules-button-container">
+                            <button className="rules-close-btn" onClick={onClose}>Close</button>
+                        </div>
                     </article>
-                    {/* <div className="rules-tips">
-                        <h2>Tips: </h2>
-                        <ul>
-                            <li>Use the Shuffle button to rearrange the grid if you're stuck.</li>
-                            <li>If you're stuck, you can use the "Deselect All" button to clear your selections and try again with a fresh perspective.</li>
-                        </ul>
-                        <p>Good luck, and see how many connections you can find!</p>
-                    </div> */}
                 </section>
             </div>
         </div>
