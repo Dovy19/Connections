@@ -38,43 +38,42 @@ export default function BoxItemGrid() {
     useEffect(() => {
         const fetchPuzzle = async () => {
             const storedPuzzle = localStorage.getItem("currentPuzzle");
-            const storedTime = localStorage.getItem("puzzleFetchedAt");
+            const storedDate = localStorage.getItem("puzzleFetchedDate");
     
-            if (storedPuzzle && storedTime) {
-                const timeElapsed = Date.now() - parseInt(storedTime, 10);
+            // Get today's date string in UTC (e.g., "2025-03-09")
+            const todayUTC = new Date().toISOString().split("T")[0];
     
-                // If it's been less than 24 hours (or your test interval), use the stored puzzle
-                if (timeElapsed <  24 * 60 * 60 * 1000) { 
-                    setPuzzle(JSON.parse(storedPuzzle));
-                    return;
-                }
+            // If the puzzle was already fetched today, use the stored one
+            if (storedPuzzle && storedDate === todayUTC) {
+                setPuzzle(JSON.parse(storedPuzzle));
+                return;
             }
     
-            // If no puzzle is stored or it's time for a new one, fetch from API
+            // Fetch new puzzle from the API
             try {
                 const response = await axios.get("https://connectionsapi.onrender.com/api/puzzle/next");
                 setPuzzle(response.data);
     
-                // Store the new puzzle and timestamp
+                // Store puzzle and today's date
                 localStorage.setItem("currentPuzzle", JSON.stringify(response.data));
-                localStorage.setItem("puzzleFetchedAt", Date.now().toString());
-                localStorage.setItem("currentHealth", 4);
+                localStorage.setItem("puzzleFetchedDate", todayUTC);
+                localStorage.setItem("currentHealth", "4");
                 localStorage.removeItem("currentGuesses");
                 localStorage.removeItem("gameWon");
                 localStorage.removeItem("correctCategories");
+    
                 setSubmissionFeedback([]);
                 setHealth(4);
                 setGameWon(false);
                 setCorrectGuesses([]);
-                
-                // Check if we need to reset streak due to inactivity
+    
+                // Reset streak if inactive for more than 50 hours
                 const currentTime = Date.now();
-                if (lastPlayedTime > 0 && (currentTime - lastPlayedTime > 50 * 60 * 60 * 1000)) {
-                    // If it's been more than 50 hours since last played, reset streak
+                if (lastPlayedTime > 0 && currentTime - lastPlayedTime > 50 * 60 * 60 * 1000) {
                     setCurrentStreak(0);
                     localStorage.setItem("currentStreak", "0");
                 }
-                
+    
                 // Update last played time
                 setLastPlayedTime(currentTime);
                 localStorage.setItem("lastPlayedTime", currentTime.toString());
@@ -82,8 +81,10 @@ export default function BoxItemGrid() {
                 setError(err.message);
             }
         };
+    
         fetchPuzzle();
-    }, [lastPlayedTime]);
+    }, []);
+    
 
     useEffect(() => {
         if(puzzle) {
