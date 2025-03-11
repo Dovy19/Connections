@@ -82,7 +82,7 @@
 
 @media (max-width: 1024px) {
     .BoxItem, .BoxItemActive {
-        width: 10em;
+        width: 95%;
         height: 4.5em;
         margin-left: 0em;
     }
@@ -95,7 +95,6 @@
 
 @media (max-width: 768px) {
     .BoxItem, .BoxItemActive {
-        width: 9em;
         height: 4.2em;
     }
 
@@ -107,7 +106,6 @@
 
 @media (max-width: 640px) {
     .BoxItem, .BoxItemActive {
-        width: 8em;
         height: 4em;
     }
 
@@ -119,7 +117,6 @@
 
 @media (max-width: 480px) {
     .BoxItem, .BoxItemActive {
-        width: 6.5em;
         height: 3.5em;
     }
 
@@ -131,7 +128,6 @@
 
 @media (max-width: 400px) {
     .BoxItem, .BoxItemActive {
-        width: 6em;
         height: 3.2em;
     }
 
