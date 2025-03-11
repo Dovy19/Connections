@@ -429,6 +429,7 @@ export default function BoxItemGrid() {
 
             {gameOver ? "" : shuffledWords.length !== 0 ? <button className="shuffleButton" onClick={handleShuffle}>Shuffle</button> : ""}
             {gameOver ? "" : shuffledWords.length !== 0 ? <button className="deselectButton" onClick={handleDeselect}>Deselect All</button> : ""}
+            <p>Want to create a puzzle and be featured in the next game? <a href="https://connectionsapi-1.onrender.com/" target="_blank">Click here!</a> </p>
             
             {(gameOver || shuffledWords.length === 0) && (
                 <div className={`feedback-summary ${!displayFeedback ? "feedback-hidden" : ""}`}>
